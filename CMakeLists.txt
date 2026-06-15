@@ -1,8 +1,10 @@
 # Set minimum CMake required version for this project.
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
+
 # Define a C++ project.
 project(RtAudio LANGUAGES CXX)
+set(CMAKE_OSX_ARCHITECTURES x86_64;arm64)
 
 # standards version
 set(CMAKE_CXX_STANDARD 11)
