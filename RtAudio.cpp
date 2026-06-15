@@ -1159,6 +1159,7 @@ void RtApiCore :: probeDevices( void )
       if ( probeDeviceInfo( ids[n], info ) == false ) continue; // ignore if probe fails
       deviceIds_.push_back( ids[n] );
       info.ID = currentDeviceId_++;  // arbitrary internal device ID
+      info.nativeID = reinterpret_cast<void*>(ids[n]);
       deviceList_.push_back( info );
       // We could set a property listener here for each device to know
       // if it is removed. However, we cannot detect (AFAIK) when a new
@@ -2182,6 +2183,7 @@ RtAudioErrorType RtApiCore :: abortStream( void )
   stream_.state = STREAM_STOPPING;
   return stopStream();
 }
+
 
 // This function will be called by a spawned thread when the user
 // callback function signals that the stream should be stopped or
