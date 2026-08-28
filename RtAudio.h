@@ -443,7 +443,7 @@ class RTAUDIO_DLL_PUBLIC RtAudio
     If a stream is running or open, it will be stopped and closed
     automatically.
   */
-  ~RtAudio() { }
+  virtual ~RtAudio() { }
 
   //! Returns the audio API specifier for the current instance of RtAudio.
   RtAudio::Api getCurrentApi( void );
