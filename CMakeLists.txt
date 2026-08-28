@@ -385,3 +385,5 @@ add_custom_target(${RTAUDIO_TARGETNAME_UNINSTALL}
 install(
     FILES ${CMAKE_CURRENT_BINARY_DIR}/rtaudio.pc
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+
+add_subdirectory(tests)
